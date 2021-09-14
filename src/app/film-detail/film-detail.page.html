@@ -1,0 +1,50 @@
+<app-header></app-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <h2 class="title">{{film.title}}</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        {{film.opening_crawl}}
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <h2 class="title">Characters</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let character of characters" (click)="getUrlCharacter(character.url)">
+          <ion-label>{{character.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h2 class="title">Planets</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let planet of planets">
+          <ion-label>{{planet.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h2 class="title">Species</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let specie of species">
+          <ion-label>{{specie.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

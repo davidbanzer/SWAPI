@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="main-title">
+      STAR WARS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let film of filmList" (click)="getUrlFilm(film.url)">
+      <ion-label>
+        <h2 class="title">Ep: {{film.episode_id}} {{film.title}}</h2>
+        <p>Dirigido por: {{film.director}}</p>
+        <p>{{film.release_date}}</p>
+        <h2></h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
