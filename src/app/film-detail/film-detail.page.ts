@@ -7,6 +7,7 @@ import { Character } from '../models/Character';
 import { Result } from '../models/Film';
 import { Planets } from '../models/Planets';
 import { Species } from '../models/Species';
+import { Starship } from '../models/Starship';
 
 @Component({
   selector: 'app-film-detail',
@@ -21,6 +22,7 @@ export class FilmDetailPage implements OnInit {
   species: Species[] = [];
   character: Character = {};
   planets: Planets[] = [];
+  starships: Starship[] = [];
   constructor(private ar: ActivatedRoute, private api: PeliculasService, private navCtrl: NavController) { }
 
   ngOnInit() {
@@ -34,6 +36,7 @@ export class FilmDetailPage implements OnInit {
       this.getCharacters();
       this.getPlanets();
       this.getSpecies();
+      this.getStarships();
     });
   }
   getCharacters() {
@@ -51,6 +54,11 @@ export class FilmDetailPage implements OnInit {
       this.fetchSpecie(specieUrl);
     });
   }
+  getStarships(){
+    this.film.starships.forEach(starshipUrl => {
+      this.fetchStarship(starshipUrl);
+    });
+  }
   fetchCharacter(characterUrl: string) {
     this.api.getCharacterByUrl(characterUrl).subscribe(data => {
       this.characters.push(data);
@@ -64,6 +72,11 @@ export class FilmDetailPage implements OnInit {
   fetchSpecie(specieUrl: string){
     this.api.getSpecieByUrl(specieUrl).subscribe(data => {
       this.species.push(data);
+    });
+  }
+  fetchStarship(starshipUrl: string){
+    this.api.getStarshipByUrl(starshipUrl).subscribe(data => {
+      this.starships.push(data);
     });
   }
   getUrlCharacter(url: string){

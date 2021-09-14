@@ -5,6 +5,7 @@ import { Character } from '../models/Character';
 import { Film, Result } from '../models/Film';
 import { Planets } from '../models/Planets';
 import { Species } from '../models/Species';
+import { Starship } from '../models/Starship';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +43,9 @@ export class PeliculasService {
     return this.http.get<Species>(
       url
     );
+  }
+  //starships
+  getStarshipByUrl(url: string) {
+    return this.http.get<Starship>(url);
   }
 }

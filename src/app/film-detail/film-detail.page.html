@@ -47,4 +47,16 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h2 class="title">Starships</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let starship of starships">
+          <ion-label>{{starship.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
