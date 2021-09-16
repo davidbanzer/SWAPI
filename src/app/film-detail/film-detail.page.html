@@ -2,7 +2,9 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <h2 class="title">{{film.title}}</h2>
+      <h2 class="title">Ep: {{film.episode_id}} {{film.title}}</h2>
+      <p class="center">{{film.producer}}</p>
+      <p  class="center">{{film.release_date}}</p>
     </ion-card-header>
     <ion-card-content>
       <ion-item>
@@ -10,7 +12,6 @@
       </ion-item>
     </ion-card-content>
   </ion-card>
-
   <ion-card>
     <ion-card-header>
       <h2 class="title">Characters</h2>
@@ -29,7 +30,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
-        <ion-item *ngFor="let planet of planets">
+        <ion-item *ngFor="let planet of planets" (click)="getUrlPlanet(planet.url)">
           <ion-label>{{planet.name}}</ion-label>
         </ion-item>
       </ion-list>
@@ -55,6 +56,18 @@
       <ion-list>
         <ion-item *ngFor="let starship of starships">
           <ion-label>{{starship.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h2 class="title">Vehicles</h2>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let vehicle of vehicles">
+          <ion-label>{{vehicle.name}}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>

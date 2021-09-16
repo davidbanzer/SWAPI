@@ -8,6 +8,7 @@ import { Result } from '../models/Film';
 import { Planets } from '../models/Planets';
 import { Species } from '../models/Species';
 import { Starship } from '../models/Starship';
+import { Vehicle } from '../models/Vehicle';
 
 @Component({
   selector: 'app-film-detail',
@@ -18,11 +19,15 @@ export class FilmDetailPage implements OnInit {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   film_id: string;
   film: Result = {};
+  //arreglos
   characters: Character[] = [];
   species: Species[] = [];
-  character: Character = {};
+  vehicles: Vehicle[] = [];
   planets: Planets[] = [];
   starships: Starship[] = [];
+  //objetos
+  character: Character = {};
+  planet: Planets = {};
   constructor(private ar: ActivatedRoute, private api: PeliculasService, private navCtrl: NavController) { }
 
   ngOnInit() {
@@ -37,8 +42,10 @@ export class FilmDetailPage implements OnInit {
       this.getPlanets();
       this.getSpecies();
       this.getStarships();
+      this.getVehicles();
     });
   }
+  //for each para llamar a los endpoints
   getCharacters() {
     this.film.characters.forEach(characterUrl => {
       this.fetchCharacter(characterUrl);
@@ -59,6 +66,12 @@ export class FilmDetailPage implements OnInit {
       this.fetchStarship(starshipUrl);
     });
   }
+  getVehicles(){
+    this.film.vehicles.forEach(vehicleUrl => {
+      this.fetchVehicle(vehicleUrl);
+    });
+  }
+  //métodos para llamar a la api
   fetchCharacter(characterUrl: string) {
     this.api.getCharacterByUrl(characterUrl).subscribe(data => {
       this.characters.push(data);
@@ -79,13 +92,27 @@ export class FilmDetailPage implements OnInit {
       this.starships.push(data);
     });
   }
+  fetchVehicle(vehicleUrl: string){
+    this.api.getVehicleByUrl(vehicleUrl).subscribe(data => {
+      this.vehicles.push(data);
+    });
+  }
+  //métodos para redireccionar
   getUrlCharacter(url: string){
     let urlAux;
     this.api.getCharacterByUrl(url).subscribe(data =>{
       this.character = data;
       urlAux = data.url.split('/')[5];
       this.navCtrl.navigateForward(['/character/'+urlAux]);
-      console.log(urlAux);
+      //console.log(urlAux);
+    });
+  }
+  getUrlPlanet(url: string){
+    let urlAux;
+    this.api.getPlanetByUrl(url).subscribe(data =>{
+      this.planet = data;
+      urlAux = data.url.split('/')[5];
+      this.navCtrl.navigateForward(['/planet/'+urlAux]);
     });
   }
 

@@ -6,6 +6,7 @@ import { Film, Result } from '../models/Film';
 import { Planets } from '../models/Planets';
 import { Species } from '../models/Species';
 import { Starship } from '../models/Starship';
+import { Vehicle } from '../models/Vehicle';
 
 @Injectable({
   providedIn: 'root'
@@ -38,14 +39,30 @@ export class PeliculasService {
       url
     );
   }
+  getPlanetById(id: string){
+    return this.http.get<Planets>('https://swapi.dev/api/planets/'+id);
+  }
   //species
   getSpecieByUrl(url: string) {
     return this.http.get<Species>(
       url
     );
   }
+  getSpecieById(id: string){
+    return this.http.get<Species>('https://swapi.dev/api/species/'+id);
+  }
   //starships
   getStarshipByUrl(url: string) {
     return this.http.get<Starship>(url);
+  }
+  getStarshipById(id: string){
+    return this.http.get<Starship>('https://swapi.dev/api/starships/'+id);
+  }
+  //vehicles
+  getVehicleByUrl(url: string){
+    return this.http.get<Vehicle>(url);
+  }
+  getVehicleById(id: string){
+    return this.http.get<Vehicle>('https://swapi.dev/api/vehicles/'+id);
   }
 }

@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'character/:id',
     loadChildren: () => import('./character/character.module').then( m => m.CharacterPageModule)
   },
+  {
+    path: 'planet/:id',
+    loadChildren: () => import('./planet/planet.module').then( m => m.PlanetPageModule)
+  },
 ];
 
 @NgModule({
