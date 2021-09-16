@@ -24,6 +24,18 @@ const routes: Routes = [
     path: 'planet/:id',
     loadChildren: () => import('./pages/planet/planet.module').then( m => m.PlanetPageModule)
   },
+  {
+    path: 'specie/:id',
+    loadChildren: () => import('./pages/specie/specie.module').then( m => m.SpeciePageModule)
+  },
+  {
+    path: 'starship/:id',
+    loadChildren: () => import('./pages/starship/starship.module').then( m => m.StarshipPageModule)
+  },
+  {
+    path: 'vehicle/:id',
+    loadChildren: () => import('./pages/vehicle/vehicle.module').then( m => m.VehiclePageModule)
+  },
 ];
 
 @NgModule({

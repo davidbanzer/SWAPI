@@ -42,7 +42,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
-        <ion-item *ngFor="let specie of species">
+        <ion-item *ngFor="let specie of species" (click)="getUrlSpecie(specie.url)">
           <ion-label>{{specie.name}}</ion-label>
         </ion-item>
       </ion-list>
@@ -54,7 +54,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
-        <ion-item *ngFor="let starship of starships">
+        <ion-item *ngFor="let starship of starships" (click)="getUrlStarship(starship.url)">
           <ion-label>{{starship.name}}</ion-label>
         </ion-item>
       </ion-list>
@@ -66,7 +66,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-list>
-        <ion-item *ngFor="let vehicle of vehicles">
+        <ion-item *ngFor="let vehicle of vehicles" (click)="getUrlVehicle(vehicle.url)">
           <ion-label>{{vehicle.name}}</ion-label>
         </ion-item>
       </ion-list>

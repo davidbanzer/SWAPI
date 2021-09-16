@@ -28,6 +28,9 @@ export class FilmDetailPage implements OnInit {
   //objetos
   character: Character = {};
   planet: Planets = {};
+  specie: Species = {};
+  starship: Starship = {};
+  vehicle: Vehicle = {};
   constructor(private ar: ActivatedRoute, private api: PeliculasService, private navCtrl: NavController) { }
 
   ngOnInit() {
@@ -115,5 +118,30 @@ export class FilmDetailPage implements OnInit {
       this.navCtrl.navigateForward(['/planet/'+urlAux]);
     });
   }
-
+  getUrlSpecie(url: string){
+    let urlAux;
+    this.api.getSpecieByUrl(url).subscribe(data =>{
+      this.specie = data;
+      urlAux = data.url.split('/')[5];
+      this.navCtrl.navigateForward(['/specie/'+urlAux]);
+    });
+  }
+  getUrlStarship(url: string){
+    let urlAux;
+    this.api.getStarshipByUrl(url).subscribe(data =>{
+      this.starship = data;
+      urlAux = data.url.split('/')[5];
+      this.navCtrl.navigateForward(['/starship/'+urlAux]);
+      console.log(urlAux);
+    });
+  }
+  getUrlVehicle(url: string){
+    let urlAux;
+    this.api.getVehicleByUrl(url).subscribe(data =>{
+      this.vehicle = data;
+      urlAux = data.url.split('/')[5];
+      this.navCtrl.navigateForward(['/vehicle/'+urlAux]);
+      console.log(urlAux);
+    });
+  }
 }
