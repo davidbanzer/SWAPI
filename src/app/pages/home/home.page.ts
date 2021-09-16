@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController } from '@ionic/angular';
-import { PeliculasService } from '../api/peliculas.service';
-import { Film, Result } from '../models/Film';
+import { PeliculasService } from '../../api/peliculas.service';
+import { Film, Result } from '../../models/Film';
 
 @Component({
   selector: 'app-home',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PeliculasService } from '../api/peliculas.service';
-import { Character } from '../models/Character';
+import { PeliculasService } from '../../api/peliculas.service';
+import { Character } from '../../models/Character';
 
 @Component({
   selector: 'app-character',

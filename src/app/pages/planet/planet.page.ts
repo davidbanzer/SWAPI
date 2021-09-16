@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PeliculasService } from '../api/peliculas.service';
-import { Planets } from '../models/Planets';
+import { PeliculasService } from '../../api/peliculas.service';
+import { Planets } from '../../models/Planets';
 
 @Component({
   selector: 'app-planet',

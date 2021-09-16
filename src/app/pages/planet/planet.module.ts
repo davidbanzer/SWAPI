@@ -4,19 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CharacterPageRoutingModule } from './character-routing.module';
+import { PlanetPageRoutingModule } from './planet-routing.module';
 
-import { CharacterPage } from './character.page';
-import { ComponentsModule } from '../components/components.module';
+import { PlanetPage } from './planet.page';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CharacterPageRoutingModule,
+    PlanetPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [CharacterPage]
+  declarations: [PlanetPage]
 })
-export class CharacterPageModule {}
+export class PlanetPageModule {}

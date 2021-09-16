@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { FilmDetailPage } from './film-detail/film-detail.page';
+import { FilmDetailPage } from './pages/film-detail/film-detail.page';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
@@ -14,15 +14,15 @@ const routes: Routes = [
   },
   {
     path: 'film-detail/:id',
-    loadChildren: () => import('./film-detail/film-detail.module').then( m => m.FilmDetailPageModule)
+    loadChildren: () => import('./pages/film-detail/film-detail.module').then( m => m.FilmDetailPageModule)
   },
   {
     path: 'character/:id',
-    loadChildren: () => import('./character/character.module').then( m => m.CharacterPageModule)
+    loadChildren: () => import('./pages/character/character.module').then( m => m.CharacterPageModule)
   },
   {
     path: 'planet/:id',
-    loadChildren: () => import('./planet/planet.module').then( m => m.PlanetPageModule)
+    loadChildren: () => import('./pages/planet/planet.module').then( m => m.PlanetPageModule)
   },
 ];
 

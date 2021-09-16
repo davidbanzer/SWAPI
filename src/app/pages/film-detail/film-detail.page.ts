@@ -2,13 +2,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
-import { PeliculasService } from '../api/peliculas.service';
-import { Character } from '../models/Character';
-import { Result } from '../models/Film';
-import { Planets } from '../models/Planets';
-import { Species } from '../models/Species';
-import { Starship } from '../models/Starship';
-import { Vehicle } from '../models/Vehicle';
+import { PeliculasService } from '../../api/peliculas.service';
+import { Character } from '../../models/Character';
+import { Result } from '../../models/Film';
+import { Planets } from '../../models/Planets';
+import { Species } from '../../models/Species';
+import { Starship } from '../../models/Starship';
+import { Vehicle } from '../../models/Vehicle';
 
 @Component({
   selector: 'app-film-detail',

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { FilmDetailPageRoutingModule } from './film-detail-routing.module';
 
 import { FilmDetailPage } from './film-detail.page';
-import { ComponentsModule } from '../components/components.module';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
